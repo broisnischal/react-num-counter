@@ -35,20 +35,24 @@ import Counter from "react-number-increment";
 
 This will start a count up transition from `0` to `100` on render.
 
-### Render prop example
+### Example
 
 ```js
-import "./App.css";
+// import "./App.css";
 import Counter from "./Counter/index";
 
 function App() {
   return (
     <div className="App">
       <Counter
-        style={{ fontSize: "200px", fontWeight: 900 }}
-        increment
-        child="+"
-        offsetend={4}
+        start=0 // number for starting
+        end=500 // where it ends
+        speed=0.1 // speed of increment 0.1 is the fastest
+        style={{ fontSize: "200px", fontWeight: 900 }} // add custom style
+        decrement // in case if you want to decrement
+        triggeronce // once updates on render
+        threshold=1 // viewport
+        child="+" // add childs ie + , - , *
       />
     </div>
   );
@@ -57,13 +61,15 @@ function App() {
 export default App;
 ```
 
-Note that `offsetend={0}` will add the offset to the ending value.
+Note that `offsetend={4}` will add the offset to the ending value.
 
-#### Delay start
+#### Add end and starting Number
 
 ```js
-<CountUp offsetend={2} speed={10} end={10} />
+<CountUp offsetend={4} speed={10} end={10} />
 ```
+
+If you have end number 100 it will ends in 104.Right now triggeronce on underdevelopment you may have to wait for another version for working of It.
 
 ## License
 

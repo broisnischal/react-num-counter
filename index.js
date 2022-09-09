@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
+
 /**
  * 描述
  * @date 2022-09-09
@@ -15,7 +16,6 @@ import { useRef, useState, useEffect } from "react";
  * @param {any} }
  * @returns {any}
  */
-
 const Counter = ({
   start = 0,
   end = 100,
@@ -25,7 +25,7 @@ const Counter = ({
   style,
   triggeronce = false,
   threshold = 0.5,
-  child
+  child,
 }) => {
   const [count, setCount] = useState(null);
   const [inView, setInview] = useState(false);
@@ -34,12 +34,15 @@ const Counter = ({
   const [trigger, setTrigger] = useState(null);
   const viewRef = useRef();
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      const entry = entries[0];
-      setInview(entry.isIntersecting);
-    }, {
-      threshold
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setInview(entry.isIntersecting);
+      },
+      {
+        threshold,
+      }
+    );
     observer.observe(viewRef.current); /// function to be triggered
 
     const incrementCounter = () => {
@@ -95,12 +98,31 @@ const Counter = ({
         incrementCounter();
       }
     }
-  }, [inView, start, end, speed, decrement, offsetend, trigger, triggeronce, threshold]);
-  return /*#__PURE__*/React.createElement("div", {
-    ref: viewRef
-  }, /*#__PURE__*/React.createElement("span", {
-    style: style
-  }, count, child));
+  }, [
+    inView,
+    start,
+    end,
+    speed,
+    decrement,
+    offsetend,
+    trigger,
+    triggeronce,
+    threshold,
+  ]);
+  return /*#__PURE__*/ React.createElement(
+    "div",
+    {
+      ref: viewRef,
+    },
+    /*#__PURE__*/ React.createElement(
+      "span",
+      {
+        style: style,
+      },
+      count,
+      child
+    )
+  );
 };
 
 export default Counter;
