@@ -1,6 +1,21 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
 
+/**
+ * 描述
+ * @date 2022-09-09
+ * @param {number} {start=0
+ * @param {number} end=100
+ * @param {number} speed=1
+ * @param {boolean} decrement
+ * @param {number} offsetend=0
+ * @param {any} style
+ * @param {boolean} triggeronce=false
+ * @param {number} threshold=0.5
+ * @param {any} child
+ * @param {any} }
+ * @returns {any}
+ */
 const Counter = ({
   start = 0,
   end = 100,
