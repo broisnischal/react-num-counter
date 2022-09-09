@@ -1,6 +1,6 @@
 {
   "name": "react-number-increment",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Lightweight number counter for React Application",
   "main": "index.js",
   "scripts": {
