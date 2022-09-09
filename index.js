@@ -1,6 +1,5 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
-
 /**
  * 描述
  * @date 2022-09-09
@@ -16,6 +15,7 @@ import { useRef, useState, useEffect } from "react";
  * @param {any} }
  * @returns {any}
  */
+
 const Counter = ({
   start = 0,
   end = 100,
@@ -25,7 +25,7 @@ const Counter = ({
   style,
   triggeronce = false,
   threshold = 0.5,
-  child,
+  child
 }) => {
   const [count, setCount] = useState(null);
   const [inView, setInview] = useState(false);
@@ -33,47 +33,53 @@ const Counter = ({
   const countdown = useRef(end);
   const [trigger, setTrigger] = useState(null);
   const viewRef = useRef();
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        setInview(entry.isIntersecting);
-      },
-      {
-        threshold,
-      }
-    );
-    observer.observe(viewRef.current);
-    /// function to be triggered
+    const observer = new IntersectionObserver(entries => {
+      const entry = entries[0];
+      setInview(entry.isIntersecting);
+    }, {
+      threshold
+    });
+    observer.observe(viewRef.current); /// function to be triggered
+
     const incrementCounter = () => {
       const accumulator = end / 100;
+
       if (countref.current < end) {
         const result = Math.ceil(countref.current + accumulator);
+
         if (result >= end) {
           //   setTrigger(true);
           return setCount(end + offsetend);
         }
+
         setCount(result);
         countref.current = result;
       }
+
       if (trigger) {
         clearTimeout(incrementCounter);
         setCount(end);
       }
+
       setTimeout(incrementCounter, speed * 50);
     };
+
     const decrementCounter = () => {
       const accumulator = end / 100;
+
       if (countdown.current > start) {
         const result = Math.ceil(countdown.current - accumulator);
+
         if (result <= start) {
           setTrigger(false);
           return setCount(start + offsetend);
         }
+
         setCount(result);
         countdown.current = result;
       }
+
       if (trigger) {
         clearTimeout(decrementCounter);
         setCount(start);
@@ -81,6 +87,7 @@ const Counter = ({
         setTimeout(decrementCounter, speed * 50);
       }
     };
+
     if (inView) {
       if (decrement) {
         decrementCounter();
@@ -88,26 +95,12 @@ const Counter = ({
         incrementCounter();
       }
     }
-  }, [
-    inView,
-    start,
-    end,
-    speed,
-    decrement,
-    offsetend,
-    trigger,
-    triggeronce,
-    threshold,
-  ]);
-
-  return (
-    <div ref={viewRef}>
-      <span style={style}>
-        {count}
-        {child}
-      </span>
-    </div>
-  );
+  }, [inView, start, end, speed, decrement, offsetend, trigger, triggeronce, threshold]);
+  return /*#__PURE__*/React.createElement("div", {
+    ref: viewRef
+  }, /*#__PURE__*/React.createElement("span", {
+    style: style
+  }, count, child));
 };
 
 export default Counter;
