@@ -1,4 +1,4 @@
-# [React Number Increment](https://github.com/neeswebservices/react-num-counter.git)
+# [React Number Increment](https://www.npmjs.com/package/react-number-increment)
 
 [![GitHub license](https://img.shields.io/npm/l/react-countup.svg?style=flat-square)](https://github.com/glennreyes/react-countup/blob/master/LICENSE)
 [![Build Status](https://img.shields.io/travis/glennreyes/react-countup.svg?style=flat-square)](https://travis-ci.org/glennreyes/react-countup)
