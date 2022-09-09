@@ -1,0 +1,23 @@
+{
+  "name": "react-number-increment",
+  "version": "0.0.1",
+  "description": "Lightweight number counter for React Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neeswebservices/react-num-counter.git"
+  },
+  "author": "Nischal Dahal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neeswebservices/react-num-counter/issues"
+  },
+  "homepage": "https://github.com/neeswebservices/react-num-counter#readme",
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
