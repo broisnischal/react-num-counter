@@ -28,7 +28,7 @@ const DEFAULTS = {
  * @param {any} child  - Items after number.
  * @param {string} seperate  - it seperates number by , or dot.
  */
-const Countup = (props) => {
+const Counter = (props) => {
   const {
     start,
     end,
@@ -156,4 +156,4 @@ const Countup = (props) => {
   );
 };
 
-export default Countup;
+export default Counter;
