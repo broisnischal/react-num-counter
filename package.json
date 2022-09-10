@@ -21,8 +21,13 @@
     "react-dom": "^18.2.0"
   },
   "keywords": [
-    "modules",
-    "react"
+    "number",
+    "increment",
+    "counter",
+    "react",
+    "countup",
+    "decrement",
+    "decrease"
   ],
   "devDependencies": {
     "@babel/cli": "^7.18.10",
