@@ -27,7 +27,8 @@
     "react",
     "countup",
     "decrement",
-    "decrease"
+    "decrease",
+    "increase"
   ],
   "devDependencies": {
     "@babel/cli": "^7.18.10",
