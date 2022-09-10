@@ -1,38 +1,54 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useRef, useState, useEffect } from "react";
+const DEFAULTS = {
+  start: 0,
+  end: 100,
+  speed: 1,
+  decrement: null,
+  offsetend: 0,
+  style: null,
+  triggeronce: false,
+  threshold: 0.5,
+  child: "+",
+  offset: null,
+  seperate: "",
+};
 
-/**
- * 描述
- * @date 2022-09-09
- * @param {number} {start=0
- * @param {number} end=100
- * @param {number} speed=1
- * @param {boolean} decrement
- * @param {number} offsetend=0
- * @param {any} style
- * @param {boolean} triggeronce=false
- * @param {number} threshold=0.5
- * @param {any} child
- * @param {any} }
- * @returns {any}
- */
-const Counter = ({
-  start = 0,
-  end = 100,
-  speed = 1,
-  decrement,
-  offsetend = 0,
-  style,
-  triggeronce = false,
-  threshold = 0.5,
-  child,
-}) => {
-  const [count, setCount] = useState(null);
+const Countup = (props) => {
+  const {
+    start,
+    end,
+    speed,
+    decrement,
+    offsetend,
+    offset,
+    style,
+    triggeronce,
+    threshold,
+    child,
+    seperate,
+  } = useMemo(() => {
+    return { ...DEFAULTS, ...props };
+  }, [props]);
+  const [count, setCount] = useState(0);
   const [inView, setInview] = useState(false);
   const countref = useRef(start);
   const countdown = useRef(end);
   const [trigger, setTrigger] = useState(null);
   const viewRef = useRef();
+
+  const commify = (n, seperatewith) => {
+    var parts = n.toString().split(".");
+    const numberPart = parts[0];
+    const decimalPart = parts[1];
+    const thousands = /\B(?=(\d{3})+(?!\d))/g;
+    return (
+      numberPart.replace(thousands, `${seperatewith}`) +
+      (decimalPart ? "." + decimalPart : "")
+    );
+  };
+
+  const formatted = useMemo(() => commify(count, seperate), [count, seperate]);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -46,7 +62,7 @@ const Counter = ({
     observer.observe(viewRef.current); /// function to be triggered
 
     const incrementCounter = () => {
-      const accumulator = end / 100;
+      const accumulator = offset ?? end / 100;
 
       if (countref.current < end) {
         const result = Math.ceil(countref.current + accumulator);
@@ -65,11 +81,11 @@ const Counter = ({
         setCount(end);
       }
 
-      setTimeout(incrementCounter, speed * 50);
+      setTimeout(incrementCounter, speed * 100);
     };
 
     const decrementCounter = () => {
-      const accumulator = end / 100;
+      const accumulator = offset ?? end / 100;
 
       if (countdown.current > start) {
         const result = Math.ceil(countdown.current - accumulator);
@@ -107,6 +123,7 @@ const Counter = ({
     offsetend,
     trigger,
     triggeronce,
+    offset,
     threshold,
   ]);
   return /*#__PURE__*/ React.createElement(
@@ -119,10 +136,10 @@ const Counter = ({
       {
         style: style,
       },
-      count,
+      formatted,
       child
     )
   );
 };
 
-export default Counter;
+export default Countup;

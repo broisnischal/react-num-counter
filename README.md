@@ -1,9 +1,8 @@
 # [React Number Increment](https://www.npmjs.com/package/react-number-increment)
 
-[![GitHub license](https://img.shields.io/npm/l/react-countup.svg?style=flat-square)](https://github.com/glennreyes/react-countup/blob/master/LICENSE)
-[![Build Status](https://img.shields.io/travis/glennreyes/react-countup.svg?style=flat-square)](https://travis-ci.org/glennreyes/react-countup)
+[![GitHub license](https://img.shields.io/npm/l/react-number-increment.svg?style=flat-square)]()
 [![Version](https://img.shields.io/npm/v/react-number-increment)](https://www.npmjs.com/package/react-number-increment)
-[![Downloads](https://img.shields.io/npm/dy/react-number-increment)](http://www.npmtrends.com/react-number-increment)
+[![Downloads](https://img.shields.io/npm/dw/react-number-increment?style=plastic)](http://www.npmtrends.com/react-number-increment)
 
 A configurable React component For counting up the number in your React appilcation. [react-number-increment](https://github.com/neeswebservices/react-num-counter.git).
 
@@ -47,13 +46,15 @@ function App() {
       <Counter
         start=0 // starting
         end=500 // ends
-        speed=0.1 // speed / delay
-        style={{ fontSize: "200px", fontWeight: 900 }} // add custom style
+        speed=1 // 100ms
         decrement // in case if you want to decrement
+        style={{ fontSize: "200px", fontWeight: 900 }} // add custom style
         triggeronce // once updates on render | NA
-        threshold=1 // viewport
+        threshold=1 // viewport 1=100%,
         child="+" // add childs ie + , - , *
-      />
+        offset=5 // increments by 5
+        seperate="," // seperates number in comma
+       />
     </div>
   );
 }
@@ -69,6 +70,20 @@ Note that `offsetend={4}` will add the offset to the ending value.
 <Counter offsetend={4} speed={10} end={10} />
 ```
 
-If you have end number 100 it will ends in 104.Right now triggeronce on underdevelopment you may have to wait for another version for working of It.
+`Tip: If you need to start the render prop component immediately, you can set speed={0}.`
 
-##### License MIT
+### If you know about default values 👍
+
+| key       | Value | Guide / What they does |
+| --------- | ----- | ---------------------- |
+| start     | 0     | Starting value         |
+| end       | 100   | Ending value           |
+| speed     | 1     | 1 is 100ms speed.      |
+| decrement | 0     | pass to decrement      |
+| offsetend | 0     | Adds the value in end  |
+| threshold | .5    | 1 = 100%               |
+| child     | "+"   | 100- , 2000*, "-", "*" |
+| offset    | null  | 5 // increments by 5   |
+| seperate  | null  | "," - 10,900           |
+
+##### License ISC
