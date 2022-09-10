@@ -14,6 +14,20 @@ const DEFAULTS = {
   seperate: "",
 };
 
+/**
+ * Represents the Counter.
+ * @constructor
+ * @param {number} start - Starting value of the counter.
+ * @param {number} end - Ending value of the counter.
+ * @param {float} speed - speed.
+ * @param {boolean} decrement - Ending value of the counter.
+ * @param {number} offsetend - Adds the value to end.
+ * @param {number} offset - Increament value by it.
+ * @param {any} style - Add your styles here.
+ * @param {float} threshold - defines viewport.
+ * @param {any} child  - Items after number.
+ * @param {string} seperate  - it seperates number by , or dot.
+ */
 const Countup = (props) => {
   const {
     start,

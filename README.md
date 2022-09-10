@@ -1,14 +1,12 @@
 # [React Number Increment](https://www.npmjs.com/package/react-number-increment)
 
-[![GitHub license](https://img.shields.io/npm/l/react-number-increment.svg?style=flat-square)]()
+[![GitHub license](https://img.shields.io/npm/l/react-number-increment.svg?style=plastic)]()
 [![Version](https://img.shields.io/npm/v/react-number-increment)](https://www.npmjs.com/package/react-number-increment)
 [![Downloads](https://img.shields.io/npm/dw/react-number-increment?style=plastic)](http://www.npmtrends.com/react-number-increment)
 
 A configurable React component For counting up the number in your React appilcation. [react-number-increment](https://github.com/neeswebservices/react-num-counter.git).
 
-## Table of Contents
-
-- [Installation](#installation)
+![Animated Gif of Counter](https://res.cloudinary.com/dacp0r5b7/image/upload/v1662805471/icons/2022-09-10_16-00-16_1_moapkf.gif)
 
 ## Installation
 
@@ -29,7 +27,7 @@ import Counter from "react-number-increment";
 ### Simple example
 
 ```js
-<Counter end={100} />
+<Counter />
 ```
 
 This will start a count up transition from `0` to `100` on render.
@@ -49,7 +47,6 @@ function App() {
         speed=1 // 100ms
         decrement // in case if you want to decrement
         style={{ fontSize: "200px", fontWeight: 900 }} // add custom style
-        triggeronce // once updates on render | NA
         threshold=1 // viewport 1=100%,
         child="+" // add childs ie + , - , *
         offset=5 // increments by 5
