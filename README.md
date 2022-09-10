@@ -30,7 +30,7 @@ import Counter from "react-number-increment";
 <Counter />
 ```
 
-This will start a count up transition from `0` to `100` on render.
+This will start a count up transition from `0` to `100` on render with speed of 1ms.
 
 ### Example
 
