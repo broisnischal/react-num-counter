@@ -5,7 +5,7 @@
 [![Downloads](https://img.shields.io/npm/dw/react-number-increment?style=plastic)](http://www.npmtrends.com/react-number-increment)
 
 A configurable React component For counting up the number in your React appilcation. [react-number-increment](https://github.com/neeswebservices/react-num-counter.git).
-
+` Alert : This package will be upgraded to TypeScript version in next update. `
 ![Animated Gif of Counter](https://res.cloudinary.com/dacp0r5b7/image/upload/v1662805471/icons/2022-09-10_16-00-16_1_moapkf.gif)
 
 ## Installation
