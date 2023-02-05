@@ -83,6 +83,6 @@ Note that `offsetend={4}` will add the offset to the ending value.
 | offset    | null  | 5 // increments by 5   |
 | seperate  | null  | "," - 10,900           |
 
-The development of TypeScript Version already have started !
+The development of TypeScript Version already have started ! Let's hope that it will be fun to see what's new upcoming and more !!
 
 ##### License ISC
