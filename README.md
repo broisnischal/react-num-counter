@@ -1,5 +1,7 @@
 # [React Number Increment](https://www.npmjs.com/package/react-number-increment)
 
+- Converting to the TypeScript version !
+
 [![GitHub license](https://img.shields.io/npm/l/react-number-increment.svg?style=plastic)]()
 [![Version](https://img.shields.io/npm/v/react-number-increment)](https://www.npmjs.com/package/react-number-increment)
 [![Downloads](https://img.shields.io/npm/dw/react-number-increment?style=plastic)](http://www.npmtrends.com/react-number-increment)
